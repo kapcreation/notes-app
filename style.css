@@ -32,6 +32,8 @@ a, button {
 
 .container {
   width: 100%;
+  max-width: 1024px;
+  margin: auto;
   min-height: 100vh;
   display: flex;
   gap: 1rem;
@@ -54,9 +56,11 @@ a, button {
 }
 
 .notes {
+  width: 100%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  align-items: center;
   max-height: 350px;
   overflow-y: auto;
   padding: 0.2rem;
@@ -65,7 +69,8 @@ a, button {
 
 .notes .note {
   position: relative;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 100px;
   background-color: white;
   color: #333;

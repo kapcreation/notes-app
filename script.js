@@ -17,7 +17,7 @@ function createNoteEl(noteId, content) {
   noteEl.setAttribute("data-note-id", noteId)
 
   noteEl.innerHTML += `
-    <textarea oninput="editNote('${noteId}')" placeholder="Enter a text...">${content || ""}</textarea>
+    <textarea oninput="editNote('${noteId}')" placeholder="Enter a note...">${content || ""}</textarea>
     <button class="delete" onclick="deleteNote('${noteId}')"><i class="bi bi-trash"></i></button>
   `
 
@@ -62,4 +62,5 @@ function saveNotes() {
 
 window.addEventListener("load", (event) => {
   if (notes.length > 0) loadNotes()
+  else addNote()
 });
