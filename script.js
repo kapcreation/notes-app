@@ -23,7 +23,12 @@ function createNoteEl(noteId, content) {
 
   notesEl.appendChild(noteEl)
 
-  if (!content) document.querySelector(`[data-note-id="${noteId}"] textarea`).focus()
+  const textarea = document.querySelector(`[data-note-id="${noteId}"] textarea`)
+  if (content) {
+    adjustTextareaHeight(textarea)
+  } else {
+    textarea.focus()
+  }
 }
 
 function addNote() {
@@ -45,7 +50,9 @@ function deleteNote(noteId) {
 function editNote(noteId) {
   const noteToEdit = notes.find(note => note.id === noteId)
 
-  const content = document.querySelector(`[data-note-id="${noteId}"] textarea`).value
+  const textarea = document.querySelector(`[data-note-id="${noteId}"] textarea`)
+  const content = textarea.value
+  adjustTextareaHeight(textarea)
 
   noteToEdit.content = content
 
@@ -56,6 +63,12 @@ function saveNotes() {
   const notesToSave = notes.filter(note => note.content !== "")
   localStorage.setItem("notes", JSON.stringify(notesToSave))
 }
+
+function adjustTextareaHeight (textarea) {
+  textarea.style.height = 'auto'
+  textarea.style.height = (textarea.scrollHeight) + 'px'
+}
+
 
 
 

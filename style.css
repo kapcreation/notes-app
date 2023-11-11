@@ -71,18 +71,19 @@ a, button {
   position: relative;
   width: 100%;
   max-width: 500px;
-  height: 100px;
+  height: auto;
   background-color: white;
   color: #333;
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 5px;
 }
 
 .notes .note textarea {
   width: 100%;
-  height: 100%;
+  min-height: 80px;
+  padding-right: 3rem;
   resize: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .notes .note .delete {
