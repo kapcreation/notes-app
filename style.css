@@ -57,6 +57,7 @@ a, button {
 
 .notes {
   width: 100%;
+  max-width: 500px;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -70,7 +71,6 @@ a, button {
 .notes .note {
   position: relative;
   width: 100%;
-  max-width: 500px;
   height: auto;
   background-color: white;
   color: #333;
