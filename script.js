@@ -1,9 +1,11 @@
+const storagePrefix = "notes-app_"
+
 const notesEl = document.querySelector(".notes")
 const addBtn = document.querySelector(".add-btn")
 
 addBtn.addEventListener("click", addNote)
 
-let notes = JSON.parse(localStorage.getItem("notes")) || []
+let notes = JSON.parse(localStorage.getItem(storagePrefix + "notes")) || []
 
 function loadNotes() {
   notes.forEach(note => {
@@ -61,7 +63,7 @@ function editNote(noteId) {
 
 function saveNotes() {
   const notesToSave = notes.filter(note => note.content !== "")
-  localStorage.setItem("notes", JSON.stringify(notesToSave))
+  localStorage.setItem(storagePrefix + "notes", JSON.stringify(notesToSave))
 }
 
 function adjustTextareaHeight (textarea) {
