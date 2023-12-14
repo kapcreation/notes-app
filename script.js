@@ -1,11 +1,12 @@
 const storagePrefix = "notes-app_"
 
 const notesEl = document.querySelector(".notes")
-const addBtn = document.querySelector(".add-btn")
-
-addBtn.addEventListener("click", addNote)
 
 let notes = JSON.parse(localStorage.getItem(storagePrefix + "notes")) || []
+
+let noteToDelete = null
+
+
 
 function loadNotes() {
   notes.forEach(note => {
@@ -42,6 +43,12 @@ function addNote() {
 }
 
 function deleteNote(noteId) {
+
+  if (noteToDelete !== noteId) {
+    noteToDelete = noteId
+    return
+  }
+
   notes = notes.filter(note => note.id !== noteId)
   saveNotes()
 

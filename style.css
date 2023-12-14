@@ -57,7 +57,7 @@ a, button {
 
 .notes {
   width: 100%;
-  max-width: 500px;
+  max-width: 750px;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -72,23 +72,27 @@ a, button {
   position: relative;
   width: 100%;
   height: auto;
-  background-color: white;
-  color: #333;
-  padding: 0.75rem;
-  border-radius: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 .notes .note textarea {
-  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  flex: 1;
   min-height: 80px;
-  padding-right: 3rem;
+  padding-right: 1.75rem;
   resize: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  padding: 0.25rem;
 }
 
 .notes .note .delete {
-  font-size: 2rem;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  background-color: red;
+  color: white;
+  width: 50px;
+  border-radius: 5px;
+  font-size: 1.25rem;
 }
